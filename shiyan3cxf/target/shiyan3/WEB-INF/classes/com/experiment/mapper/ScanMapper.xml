@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE mapper
+                PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.experiment.mapper.ScanMapper">
+    <select id="getscan" resultType="scan" parameterType="java.lang.Integer">
+        select * from scan where u_id = #{arg0}
+    </select>
+    <insert id="insertscan" parameterType="scan">
+        insert into scan (u_id,h_id,score) values (#{u_id},#{h_id},#{score})
+    </insert>
+    <update id="updatescan" parameterType="scan">
+        update scan set score=#{score} where u_id = #{u_id} and h_id = #{h_id}
+    </update>
+    <select id="getscanbyid" resultType="scan" parameterType="java.lang.Integer">
+        select * from scan where u_id = #{arg0} and h_id = #{arg1}
+    </select>
+</mapper>

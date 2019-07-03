@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE mapper
+                PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.experiment.mapper.AppraiseMapper">
+    <select id="getallAppraiseMapper" resultType="appraise">
+        select * from appraise
+    </select>
+
+    <insert id="addAppraise" parameterType="appraise">
+        insert into appraise (a_hourseappraise,a_userid,a_hourseid,a_data) values (#{a_hourseappraise},#{a_userid},#{a_hourseid},#{a_data})
+    </insert>
+</mapper>

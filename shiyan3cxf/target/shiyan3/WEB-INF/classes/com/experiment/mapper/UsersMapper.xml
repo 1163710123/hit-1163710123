@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE mapper
+                PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.experiment.mapper.UsersMapper">
+    <select id="checkUser" resultType="users">
+        select * from users where u_username=#{arg0} and u_password=#{arg1}
+    </select>
+
+    <select id="getusernmae" resultType="users">
+        select * from users where u_username=#{arg0}
+    </select>
+
+    <select id="getuserbyid" resultType="users">
+        select * from users where u_id=#{arg0}
+    </select>
+
+    <insert id="insertUser" parameterType="users">
+        insert into users (u_username,u_password,u_telephone,u_sex,u_data)values(#{u_username},#{u_password},#{u_telephone},#{u_sex},#{u_data})
+    </insert>
+
+<update id="updateUser" parameterType="users">
+        update users set u_username=#{u_username} ,u_password = #{u_password},u_telephone=#{u_telephone},u_sex=#{u_sex},u_data=#{u_data} where u_id = #{u_id}
+    </update>
+
+<select id="getallUser" resultType="users">
+        select * from users
+    </select>
+</mapper>
