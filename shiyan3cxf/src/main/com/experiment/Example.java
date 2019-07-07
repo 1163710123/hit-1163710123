@@ -58,7 +58,7 @@ public class Example {
             instream.close();
         }
     }
-
+//一个函数喵喵喵 兵兵到此一游
     public  static String fenci(String string){
         String url = "http://api01.idataapi.cn:8000/nlp/segment/bitspaceman?apikey=SieU1idNOWcILw1RWwzqamyphwpY0KJ0BUFt51p3RhkmjWYd1kXEk49HF2mzjE8t";
         String body = "text="+string;
